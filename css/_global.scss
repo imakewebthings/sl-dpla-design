@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('font/fontawesome-webfont.eot?v=3.0.1');
+  src: url('font/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('font/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('font/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$sansFontStack: 'Roboto', sans-serif;
+$appGutterWidth: 40px;
+
+html {
+  height:100%;
+  overflow-y:scroll;
+}
+
+body {
+  font-family:$sansFontStack;
+  font-weight:400;
+  height:100%;
+  line-height:1.5;
+  color:$bodyColor;
+  background:$bodyBackground;
+}
+
+h1 {
+  font-size:28px;
+  font-weight:700;
+  margin-top:4px;
+}
+
+h2 {
+  font-weight:700;
+}
+
+strong, b {
+  font-weight:700;
+}
+
+label {
+  display:block;
+  font-weight:bold;
+  line-height:1.5;
+
+  &.infield {
+    line-height:1.1;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  width:100%;
+  padding:5px;
+  border:1px solid $formFieldBorder;
+  margin:0;
+  font-family:$sansFontStack;
+  font-size:inherit;
+  border-radius:3px;
+}
+
+input[type="submit"], button {
+  margin:0;
+  font-family:$sansFontStack;
+  font-size:inherit;
+}
+
+a {
+  color:$linkColor;
+}
+
+.clearfix {
+  *zoom:1;
+
+  &:before, &:after {
+    content:" ";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+}
+
+.app-container {
+  min-height:100%;
+  position:relative;
+  z-index:1;
+}
+
+.app-header {
+  background:$appHeaderBackground;
+
+  h1 {
+    float:left;
+
+    > a {
+      color:$logoColor;
+      text-decoration:none;
+    }
+  }
+}
+
+.app-main {
+  padding-top:32px;
+}
+
+.form-row {
+  display:block;
+  padding:8px 0;
+}
+
+.button {
+  display:inline-block;
+  padding:5px 10px;
+  background:$buttonDefaultBackground;
+  color:$buttonDefaultColor;
+  text-decoration:none;
+  border:1px solid $buttonDefaultBorder;
+  border-radius:3px;
+  line-height:normal;
+
+  &:hover, &:focus {
+    background:$buttonDefaultHoverBackground;
+    color:$buttonDefaultHoverColor;
+    border-color:$buttonDefaultHoverBorder;
+  }
+}
+
+.top-level-header {
+  font-size:32px;
+  font-weight:100;
+  line-height:1;
+}
+
+/* From H5BP: http://html5boilerplate.com/ */
+.accessible-hide {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.form-errors {
+  color:$formErrorColor;
+  font-size:12px;
+  line-height:1.25;
+  margin-top:8px;
+}
+
+.redacted {
+  font-family:'RedactedScript';
+}
+
+.app-container .stack-book .spine-text {
+  height:24px;
+}
+
+a, .button {
+  -webkit-transition-duration:300ms;
+  transition-duration:300ms;
+  -webkit-transition-property:color, background-color, opacity;
+  transition-property:color, background-color, opacity;
+}
+
+.loader {
+  width:100%;
+  height:16px;
+  background:url(images/loading.gif);
+}

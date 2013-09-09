@@ -1,0 +1,36 @@
+.app-notify {
+  position:fixed;
+  z-index:5;
+  right:0;
+  top:64px;
+}
+
+.app-notifications {
+  width:0;
+  overflow:visible;
+
+  > li {
+    margin-bottom:4px;
+    padding:5px 10px;
+    float:right;
+    clear:right;
+    width:220px;
+    font-size:12px;
+    line-height:1.25;
+
+    &.notice {
+      background:$notificationNoticeBackground;
+      color:$notificationNoticeColor;
+    }
+
+    &.success {
+      background:$notificationSuccessBackground;
+      color:$notificationSuccessColor;
+    }
+
+    &.error {
+      background:$notificationErrorBackground;
+      color:$notificationErrorColor;
+    }
+  }
+}

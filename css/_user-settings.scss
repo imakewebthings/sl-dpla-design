@@ -1,0 +1,17 @@
+.user-settings {
+  width:200px;
+  
+  .modal-footer {
+    padding:0 0 0 60px;
+  }
+
+  .delete-user {
+    float:right;
+    font-family:'FontAwesome';
+
+    &:hover, &:focus {
+      background:$deleteUserHoverBackground;
+      border-color:$deleteUserHoverBorder;
+    }
+  }
+}

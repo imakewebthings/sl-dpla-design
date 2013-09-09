@@ -1,0 +1,39 @@
+.stackview .stack-item-delete {
+  font-family:'FontAwesome';
+  position:absolute;
+  z-index:4;
+  display:block;
+  right:-15px;
+  top:50%;
+  margin-top:-12px;
+  cursor:pointer;
+  color:$stackItemDeleteColor;
+
+  &:hover, &:focus {
+    color:$stackItemDeleteHoverColor;
+  }
+}
+
+.edit-shelf {
+  position:absolute;
+  z-index:9;
+  left:286px;
+  top:16px;
+  font-size:12px;
+}
+
+.delete-shelf {
+  position:absolute;
+  z-index:9;
+  left:220px;
+  top:16px;
+  font-size:12px;
+  background:$thickRed;
+  border:1px solid $baseRed;
+
+  &:hover, &:focus {
+    background:$baseRed;
+    border:1px solid $baseRed;
+  }
+}
+

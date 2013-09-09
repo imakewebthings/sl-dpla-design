@@ -1,0 +1,56 @@
+.book-relateds {
+  margin-top:16px;
+}
+
+.book-relateds-nav {
+  @extend .clearfix;
+  width:338px;
+  border:1px solid $relatedNavBorder;
+  border-radius:5px;
+
+  > li {
+    width:112px;
+    float:left;
+    border-left:1px solid $relatedNavBorder;
+
+    &:first-child {
+      border-left:0;
+    }
+  }
+
+  a {
+    display:block;
+    padding:3px;
+    text-align:center;
+    background:$relatedNavBackground;
+    color:$baseWhite;
+    font-weight:700;
+    text-decoration:none;
+    position:relative;
+
+    &:hover, &:focus, &.active {
+      background:$relatedNavBackgroundHover;
+    }
+
+    &.active {
+      pointer-events:none;
+      cursor:default;
+
+      &:after {
+        content:'';
+        position:absolute;
+        bottom:-11px;
+        left:50%;
+        margin-left:-5px;
+        width:0;
+        height:0;
+        border:5px solid transparent;
+        border-top-color:$relatedNavBorder;
+      }
+    }
+  }
+}
+
+.book-relateds-container {
+  margin-top:16px;
+}

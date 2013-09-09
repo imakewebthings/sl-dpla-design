@@ -1,0 +1,115 @@
+$baseWhite: #fff;
+$baseBlue: rgb(0,122,204);
+$baseOrange: rgb(255,102,0);
+$baseDark: #135;
+$baseGreen: #2fbd05;
+$baseRed: #a41034;
+
+$thinBlue: transparentize($baseBlue, .7);
+$thinWhite: transparentize($baseWhite, .7);
+$thinDark: transparentize($baseDark, .7);
+$thinOrange: transparentize($baseOrange, .7);
+$thinGreen: transparentize($baseGreen, .7);
+$thinRed: transparentize($baseRed, .7);
+
+$thickBlue: transparentize($baseBlue, .3);
+$thickWhite: transparentize($baseWhite, .3);
+$thickDark: transparentize($baseDark, .3);
+$thickOrange: transparentize($baseOrange, .3);
+$thickGreen: transparentize($baseGreen, .3);
+$thickRed: transparentize($baseRed, .3);
+
+// ---------------------------
+
+$appHeaderBackground: $baseBlue;
+
+$appNavColor: $baseWhite;
+$appNavHoverBackground: $thinDark;
+
+$appSearchBackground: $baseBlue;
+$appSearchColor: $baseDark;
+$appSearchButtonBackground: $thinWhite;
+$appSearchButtonColor: $baseWhite;
+$appSearchButtonHoverBackground: $thinDark;
+
+$bodyBackground: $baseWhite;
+$bodyColor: $baseDark;
+
+$bookAuthorColor:$thickDark;
+$bookMetaBackground:$thinBlue;
+$bookPreviewAuthorColor:$thickDark;
+$bookSubjectsHeaderBackground: $thinWhite;
+
+$buttonDefaultBackground: $thickBlue;
+$buttonDefaultColor: $baseWhite;
+$buttonDefaultBorder: $thinBlue;
+$buttonDefaultHoverBackground: $baseBlue;
+$buttonDefaultHoverColor: $baseWhite;
+$buttonDefaultHoverBorder: $baseBlue;
+
+$coverTextBackground: $thinBlue;
+
+$deleteReviewColor: $thinRed;
+$deleteReviewHoverColor: $baseRed;
+$deleteUserHoverBackground: $thickRed;
+$deleteUserHoverBorder: $thinRed;
+
+$dropdownBackground: $baseBlue;
+$dropdownColor: $baseWhite;
+
+$formErrorColor: $baseRed;
+$formFieldBorder: $thinBlue;
+
+$infieldLabelColor: $baseDark;
+
+$linkColor: $baseBlue;
+
+$logoColor: $baseWhite;
+
+$modalCloseBackground: $thinDark;
+$modalCloseColor: $baseWhite;
+$modalCloseHoverBackground: $thickDark;
+$modalHeaderBackground: $baseBlue;
+$modalHeaderColor: $baseWhite;
+$modalFooterBackground: $thinBlue;
+$modalFooterColor: $baseDark;
+$modalOverlayBackground: $thickDark;
+$modalWrapperBackground: $baseWhite;
+
+$notificationErrorBackground: $baseRed;
+$notificationErrorColor: $baseWhite;
+$notificationNoticeBackground: $baseBlue;
+$notificationNoticeColor: $baseWhite;
+$notificationSuccessBackground: $baseGreen;
+$notificationSuccessColor: $baseWhite;
+
+$readBookBackground: $thickGreen;
+$readBookBackgroundHover: $baseGreen;
+
+$relatedsBorder: $thinBlue;
+$relatedCategoryBackground: $baseOrange;
+
+$relatedNavBackground: $thickBlue;
+$relatedNavBackgroundHover: $baseBlue;
+$relatedNavBorder: $baseBlue;
+
+$reviewsListBorder: $thinBlue;
+$reviewBackground: transparentize($baseBlue, .9);
+
+$shelfActionsColor: $baseDark;
+$shelfActionsHoverColor: $baseBlue;
+$shelfOverviewHeaderBackground: $thickBlue;
+$shelfOverviewHeaderHoverBackground: $baseBlue;
+$shelfOverviewHeaderColor: $baseWhite;
+
+$stackItemDeleteColor: $thinRed;
+$stackItemDeleteHoverColor: $baseRed;
+$stackLayoutOptionsBackground: $thickBlue;
+$stackLayoutOptionsColor: $thickWhite;
+$stackLayoutOptionsHoverBackground: $baseBlue;
+$stackLayoutOptionsHoverColor: $baseWhite;
+$stackLayoutOptionsBorder: $thinWhite;
+
+$subjectDividerColor:$thinBlue;
+
+$welcomeFooterBorder:$thinBlue;

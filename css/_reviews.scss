@@ -1,0 +1,88 @@
+.reviews-list {
+  padding-top:16px;
+  margin:16px 0;
+  position:relative;
+
+  h2 {
+    font-size:24px;
+    font-weight:100;
+    margin-bottom:8px;
+
+    &:after {
+      content: " (" attr(data-reviewcount) ")";
+      font-size:20px;
+    }
+  }
+}
+
+.review {
+  padding:10px;
+  margin-bottom:16px;
+  background:$reviewBackground;
+  clear:both;
+
+  h3 {
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:8px;
+  }
+
+  .star-rating {
+    float:right;
+    margin-left:12px;
+  }
+}
+
+.delete-review {
+  float:right;
+  font-family:'FontAwesome';
+  text-decoration:none;
+  color:$deleteReviewColor;
+
+  &:hover, &:focus {
+    color:$deleteReviewHoverColor;
+  }
+}
+
+.star-rating {
+  font-family:'FontAwesome';
+
+  .star {
+    width:15px;
+    display:inline-block;
+  }
+}
+
+.average-rating {
+  &:before {
+    content:'Avg:';
+    font-family:'Roboto', sans-serif;
+    padding-right:5px;
+    font-size:12px;
+    vertical-align:middle;
+  }
+
+  float:right;
+  opacity:0.5;
+  position:relative;
+  right:10px;
+}
+
+.review-comment {
+  white-space:pre-wrap;
+  font-size:14px;
+}
+
+.new-review {
+  border-top: 1px solid $reviewsListBorder;
+  padding-top:16px;
+
+  > h2 {
+    font-size:24px;
+    font-weight:100;
+  }
+
+  textarea {
+    height:116px;
+  }
+}

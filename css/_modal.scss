@@ -1,0 +1,90 @@
+.app-modal {
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  background:$modalOverlayBackground;
+  display:none;
+  z-index:2;
+  font-size:14px;
+
+  &.showing {
+    display:block;
+  }
+
+  .csstransitions & {
+    display:block;
+    opacity:0;
+    -webkit-transform:scale(0);
+    -webkit-transition-property:opacity, -webkit-transform;
+    -webkit-transition-duration:300ms;
+    transform:scale(0);
+    transition-property:opacity, transform;
+    transition-duration:300ms;
+    pointer-events:none;
+
+    &.showing {
+      -webkit-transform:scale(1);
+      transform:scale(1);
+      opacity:1;
+      pointer-events:auto;
+    }
+  }
+}
+
+.modal-wrapper {
+  position:absolute;
+  background:$modalWrapperBackground;
+  padding:40px 30px 10px 30px;
+  border-radius:5px;
+  box-shadow:0 0 400px 20px rgba(255,255,255,.4);
+
+  > .modal-close {
+    position:absolute;
+    z-index:9;
+    top:8px;
+    right:5px;
+    width:20px;
+    height:20px;
+    line-height:20px;
+    font-weight:bold;
+    text-align:center;
+    display:block;
+    background:$modalCloseBackground;
+    color:$modalCloseColor;
+    text-decoration:none;
+    border-radius:5px;
+
+    &:hover, &:focus {
+      background:$modalCloseHoverBackground;
+    }
+  }
+}
+
+.modal-header {
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:36px;
+  line-height:36px;
+  font-size:16px;
+  font-weight:bold;
+  background:$modalHeaderBackground;
+  color:$modalHeaderColor;
+  text-indent:30px;
+  border-radius:5px 5px 0 0;
+}
+
+.modal-footer {
+  width:100%;
+  padding:0 30px;
+  position:relative;
+  top:10px;
+  margin-left:-30px;
+  background:$modalFooterBackground;
+  color:$modalFooterColor;
+  overflow:hidden;
+  border-radius:0 0 5px 5px;
+}

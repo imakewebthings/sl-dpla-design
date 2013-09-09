@@ -1,0 +1,17 @@
+.layout-wrapper {
+  @extend .clearfix;
+  width:720px;
+  margin:0 auto;
+}
+
+.layout-full-width {
+  width:700px;
+  padding:0 10px;
+}
+
+.layout-column {
+  float:left;
+  width:340px;
+  padding:0 10px;
+  min-height:1px;
+}
