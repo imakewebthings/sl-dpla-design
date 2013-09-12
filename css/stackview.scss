@@ -85,7 +85,6 @@
   -webkit-overflow-scrolling:touch;
 
   &:before {
-    // background:url('images/bookEnd-prev.png');
     content:"";
     display:block;
     width:212px;
@@ -105,15 +104,14 @@
     height:94px;
     border-left:8px solid #ccc;
     border-top:8px solid #ccc;
-    // background:url('images/bookEnd-next.png');
   }
 }
 
 .stackview-placeholder {
-  width:250px;
-  background:url('images/placeholder.gif') no-repeat center center #ccd;
-  border:1px solid #bbb;
-  height:40px;
+  width:220px;
+  background:url('images/placeholder.gif') no-repeat center center #fff;
+  height:42px;
+  margin-bottom:1px;
   position:relative;
   z-index:9997;
 }
@@ -150,8 +148,6 @@
   overflow:hidden;
   display:block;
   padding:2px 0;
-  // white-space:nowrap;
-  // text-overflow:ellipsis;
 }
 
 .spine-title {

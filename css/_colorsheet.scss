@@ -21,16 +21,16 @@ $thickRed: transparentize($baseRed, .3);
 
 // ---------------------------
 
-$appHeaderBackground: $baseBlue;
+$appHeaderBackground:#222;
 
 $appNavColor: $baseWhite;
 $appNavHoverBackground: $thinDark;
 
 $appSearchBackground: $baseBlue;
 $appSearchColor: $baseDark;
-$appSearchButtonBackground: $thinWhite;
+$appSearchButtonBackground: #888;
 $appSearchButtonColor: $baseWhite;
-$appSearchButtonHoverBackground: $thinDark;
+$appSearchButtonHoverBackground: #888;
 
 $bodyBackground: $baseWhite;
 $bodyColor: $baseDark;

@@ -9,11 +9,23 @@
 }
 
 .dpla-related {
-  width:360px;
+  width:334px;
   margin-left:-5px;
 
   .dpla-loading & {
     visibility:hidden;
+  }
+}
+
+.module.yellow {
+  border-top:8px solid #e6a425;
+  background:#ededed;
+  padding:8px 10px;
+  margin-bottom:16px;
+
+  > h3 {
+    font-family:'source_sans_pro_semiboldRg';
+    margin:.5em 0;
   }
 }
 
@@ -25,11 +37,35 @@
 .dpla-related-item {
   float:left;
   margin:0 0 5px 5px;
-  width:110px;
+  width:103px;
   position:relative;
 
   a {
     text-decoration:none;
+
+    &:hover span {
+      opacity:1;
+    }
+  }
+
+  span {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+    background:rgba(0,0,0,.7);
+    color:#fff;
+    font-size:12px;
+    line-height:1.25;
+    padding:6px;
+    word-break:break-word;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    opacity:0;
+    -webkit-transition:opacity 300ms;
+    -moz-transition:opacity 300ms;
+    transition:opacity 300ms;
   }
 }
 

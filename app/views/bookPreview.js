@@ -32,6 +32,7 @@ define([
 
     events: {
       'click .read-book': 'loadBookReader',
+      'click .single-subject-link': 'loadSingleSubject',
       'submit .add-to-shelf-form': 'addBookToShelf',
     },
 
@@ -52,6 +53,24 @@ define([
       event.preventDefault();
     },
 
+    loadSingleSubject: function(event) {
+      var subject = $(event.target).data('subject');
+
+      this.loadStack({
+        url: settings.get('searchURL'),
+        search_type: 'subject',
+        query: subject,
+        ribbon: subject,
+        fullHeight: true
+      });
+
+      event.preventDefault();
+    },
+
+    loadStack: function(options) {
+      mediator.trigger('stack:load', options);
+    },
+
     addBookToShelf: function(event) {
       var $shelfFormElement = this.$('.add-to-shelf-form [name="shelf_id"]');
       var shelfID = $shelfFormElement.val();
@@ -63,7 +82,7 @@ define([
       $.ajax({
         type: 'post',
         url: settings.get('shelfPushURL', shelfID),
-        data: { 
+        data: {
           item: {
             item_id: bookID,
             item_type: 'book',

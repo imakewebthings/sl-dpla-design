@@ -91,10 +91,10 @@ https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functio
 }
 
 .stackview-placeholder {
-  width: 250px;
-  background: url("images/placeholder.gif") no-repeat center center #ccccdd;
-  border: 1px solid #bbb;
-  height: 40px;
+  width: 220px;
+  background: url("images/placeholder.gif") no-repeat center center white;
+  height: 42px;
+  margin-bottom: 1px;
   position: relative;
   z-index: 9997;
 }
@@ -209,11 +209,7 @@ https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functio
 }
 .heat1 a {
   background-color: #a2c8dc;
-  color: #222;
   border-color: #a2c8dc;
-}
-.heat1 a:visited, .heat1 a:hover, .heat1 a:active {
-  color: #222;
 }
 .heat1 .stack-pages {
   background: #d9e9f1;
@@ -228,11 +224,7 @@ https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functio
 }
 .heat2 a {
   background-color: #90bdd5;
-  color: #222;
   border-color: #90bdd5;
-}
-.heat2 a:visited, .heat2 a:hover, .heat2 a:active {
-  color: #222;
 }
 .heat2 .stack-pages {
   background: #d2e4ee;
@@ -247,11 +239,7 @@ https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functio
 }
 .heat3 a {
   background-color: #7db2ce;
-  color: #222;
   border-color: #7db2ce;
-}
-.heat3 a:visited, .heat3 a:hover, .heat3 a:active {
-  color: #222;
 }
 .heat3 .stack-pages {
   background: #cbe0eb;

@@ -1,5 +1,6 @@
 .book-preview {
   padding-top:32px;
+  line-height:1.25;
 
   > h2 {
     font-size:18px;
@@ -21,6 +22,7 @@
     font-size:16px;
     margin-bottom:16px;
     color:#888;
+    line-height:1;
   }
 
   > img {
@@ -37,7 +39,26 @@
 
     > li {
       float:left;
-      margin-right:5px;
+      margin-right:20px;
+    }
+
+    a {
+      color:#dd4e00;
+      text-decoration:none;
+      font-size:12px;
+      font-family:'source_sans_pro_semiboldRg';
+
+      &:hover, &:focus {
+        color:#222;
+      }
+
+      &:after {
+        content:'\e002';
+        font-family:'icomoon';
+        margin:0 0 0 4px;
+        font-size:16px;
+        vertical-align:bottom;
+      }
     }
   }
 }

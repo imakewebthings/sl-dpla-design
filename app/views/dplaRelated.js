@@ -22,7 +22,6 @@ define([
 ) {
 
   var DplaRelatedView = BaseView.extend({
-    className: 'dpla-loading',
     template: _.template(DplaRelatedTemplate),
 
     initialize: function(options) {
@@ -43,7 +42,6 @@ define([
         this.$('.dpla-related').masonry({
           itemSelector: '.dpla-related-item'
         });
-        this.$el.removeClass('dpla-loading');
       }, this));
     },
 

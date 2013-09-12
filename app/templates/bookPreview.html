@@ -9,42 +9,22 @@
 
   <p class="book-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-  <div class="book-meta">
-    <% if (model.get('publisher')) { %>
-      <p class="book-published">
-        <strong>Published by:</strong>
-        <%= model.get('publisher') %>
-      </p>
-    <% } %>
-
-    <% if (model.get('pub_date')) { %>
-      <p class="book-pub-date">
-        <strong>Year published:</strong>
-        <%= model.get('pub_date') %>
-      </p>
-    <% } %>
-
-    <% if (model.get('measurement_page_numeric')) { %>
-      <p class="book-page-count">
-        <strong>Pages:</strong>
-        <%= model.get('measurement_page_numeric') %>
-      </p>
-    <% } %>
-
-    <% if (model.get('source_url')) { %>
-      <p class="book-source">
-        <strong>Source:</strong>
-        <% if (model.get('source_library')) { %>
-          <span><%= model.get('source_library') %></span>
-        <% } %>
-        <a href="<%= model.get('source_url') %>" target="_blank"><%= model.get('source_url') %></a>
-      </p>
-    <% } %>
-  </div>
+  <% var subjects = model.get('subjects') %>
+  <% if (subjects && subjects.length) { %>
+    <div class="book-subjects">
+      <strong>Subjects:</strong>
+      <ul class="individual-subjects">
+        <% _.each(subjects, function(subject, index) { %>
+          <li><a href="#" class="single-subject-link" data-subject="<%= subject %>"><%= subject %></a></li>
+        <% }); %>
+      </ul>
+    </div>
+  <% } %>
 
   <ul class="book-preview-actions">
+    <li><a href="#TODO-VIEWOBJECT">View Object</a></li>
     <% if (model.get('viewer_url')) { %>
-      <li><a href="<%= model.get('viewer_url') %>" class="button read-book">Read Book</a></li>
+      <li><a href="<%= model.get('viewer_url') %>">Read</a></li>
     <% } %>
   </ul>
 

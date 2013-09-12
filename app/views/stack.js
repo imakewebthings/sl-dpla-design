@@ -25,7 +25,7 @@ define([
   StackViewBookTemplate,
   StackViewDplaTemplate
 ) {
-  
+
   window.StackView.defaults.book.min_height_percentage = 66;
   $.extend(true, window.StackView.defaults, {
     selectors: {
@@ -150,17 +150,17 @@ define([
     },
 
     _qtipify: function() {
-      this.$('.stack-item-link:not(.qtipped)').addClass('qtipped').qtip({
-        events: {
-          show: function(event, api) {
-            var $stackItem = api.elements.target.closest('.stack-item');
-            if ($stackItem.hasClass('stack-pivot')) {
-              event.preventDefault();
-            }
-          }
-        },
-        hide: { event: 'click mouseleave'}
-      });
+      // this.$('.stack-item-link:not(.qtipped)').addClass('qtipped').qtip({
+      //   events: {
+      //     show: function(event, api) {
+      //       var $stackItem = api.elements.target.closest('.stack-item');
+      //       if ($stackItem.hasClass('stack-pivot')) {
+      //         event.preventDefault();
+      //       }
+      //     }
+      //   },
+      //   hide: { event: 'click mouseleave'}
+      // });
     },
 
     _makeShelfSortable: function() {
