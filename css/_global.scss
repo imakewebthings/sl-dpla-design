@@ -8,7 +8,7 @@
   font-style: normal;
 }
 
-$sansFontStack: 'Roboto', sans-serif;
+$sansFontStack: "source_sans_proregular", sans-serif;
 $appGutterWidth: 40px;
 
 html {
@@ -105,10 +105,6 @@ a {
       text-decoration:none;
     }
   }
-}
-
-.app-main {
-  padding-top:32px;
 }
 
 .form-row {

@@ -1,0 +1,143 @@
+/******************
+   HEATMAP
+
+   hottest = heat10
+   coldest = heat1
+*******************/
+$basebg: #4691b9;
+$baseborder: #4691b9;
+
+.heat1 {
+	$bg: tint($basebg, 50%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		color:#222;
+		border-color:$border;
+
+		&:visited, &:hover, &:active {
+			color:#222;
+		}
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat2 {
+	$bg: tint($basebg, 40%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		color:#222;
+		border-color:$border;
+
+		&:visited, &:hover, &:active {
+			color:#222;
+		}
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat3 {
+	$bg: tint($basebg, 30%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		color:#222;
+		border-color:$border;
+
+		&:visited, &:hover, &:active {
+			color:#222;
+		}
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat4 {
+	$bg: tint($basebg, 20%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		border-color:$border;
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat5 {
+	$bg: tint($basebg, 10%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		border-color:$border;
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat6 {
+	$bg: $basebg;
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		border-color:$border;
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat7 {
+	$bg: shade($basebg, 10%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		border-color:$border;
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat8 {
+	$bg: shade($basebg, 20%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		border-color:$border;
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat9 {
+	$bg: shade($basebg, 30%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		border-color:$border;
+	}
+
+	@include decorations($bg, $border);
+}
+
+.heat10 {
+	$bg: shade($basebg, 40%);
+	$border: $bg;
+
+	a {
+		background-color:$bg;
+		border-color:$border;
+	}
+
+	@include decorations($bg, $border);
+}

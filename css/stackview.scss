@@ -1,0 +1,231 @@
+/*
+  Stack View - The jQuery virtual stack plugin
+  by The Harvard Library Innovation Lab
+
+  Dual licensed under MIT and GPL.
+*/
+@font-face {
+  font-family: 'icomoon';
+  src:url('http://dp.la/assets/icomoon.eot');
+  src:url('http://dp.la/assets/icomoon.eot?#iefix') format('embedded-opentype'),
+      url('http://dp.la/assets/icomoon.svg#icomoon') format('svg'),
+      url('http://dp.la/assets/icomoon.woff') format('woff'),
+      url('http://dp.la/assets/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_proregular';
+  src: url('http://dp.la/assets/sourcesanspro-regular-webfont.eot');
+  src: url('http://dp.la/assets/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('http://dp.la/assets/sourcesanspro-regular-webfont.woff') format('woff'),
+       url('http://dp.la/assets/sourcesanspro-regular-webfont.ttf') format('truetype'),
+       url('http://dp.la/assets/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_pro_semiboldRg';
+  src: url('http://dp.la/assets/sourcesanspro-semibold-webfont.eot');
+  src: url('http://dp.la/assets/sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('http://dp.la/assets/sourcesanspro-semibold-webfont.woff') format('woff'),
+       url('http://dp.la/assets/sourcesanspro-semibold-webfont.ttf') format('truetype'),
+       url('http://dp.la/assets/sourcesanspro-semibold-webfont.svg#source_sans_pro_semiboldRg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_pro_semiboldIt';
+  src: url('http://dp.la/assets/sourcesanspro-semiboldit-webfont.eot');
+  src: url('http://dp.la/assets/sourcesanspro-semiboldit-webfont.eot?#iefix') format('embedded-opentype'),
+       url('http://dp.la/assets/sourcesanspro-semiboldit-webfont.woff') format('woff'),
+       url('http://dp.la/assets/sourcesanspro-semiboldit-webfont.ttf') format('truetype'),
+       url('http://dp.la/assets/sourcesanspro-semiboldit-webfont.svg#source_sans_pro_semiboldIt') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'source_sans_proitalic';
+  src: url('http://dp.la/assets/sourcesanspro-it-webfont.eot');
+  src: url('http://dp.la/assets/sourcesanspro-it-webfont.eot?#iefix') format('embedded-opentype'),
+       url('http://dp.la/assets/sourcesanspro-it-webfont.woff') format('woff'),
+       url('http://dp.la/assets/sourcesanspro-it-webfont.ttf') format('truetype'),
+       url('http://dp.la/assets/sourcesanspro-it-webfont.svg#source_sans_proitalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "stackview/mixins";
+
+.stackview {
+  font-family:"source_sans_proregular", sans-serif;
+  position:relative;
+  height:520px;
+  padding:0 0 0 65px;
+  overflow:hidden;
+
+  * {
+    margin:0;
+    padding:0;
+  }
+}
+
+.stack-items {
+  list-style:none;
+  height:100%;
+  overflow:auto;
+  width:100%;
+  padding-right:40px;
+  position:relative;
+  z-index:2;
+  -webkit-overflow-scrolling:touch;
+
+  &:before {
+    // background:url('images/bookEnd-prev.png');
+    content:"";
+    display:block;
+    width:212px;
+    height:94px;
+    margin-top:20px;
+    border-left:8px solid #ccc;
+    border-bottom:8px solid #ccc;
+    position:relative;
+    margin-bottom:1px;
+    z-index:9999; // Needs to be bigger than # of books.
+  }
+
+  &:after {
+    content:"";
+    display:block;
+    width:212px;
+    height:94px;
+    border-left:8px solid #ccc;
+    border-top:8px solid #ccc;
+    // background:url('images/bookEnd-next.png');
+  }
+}
+
+.stackview-placeholder {
+  width:250px;
+  background:url('images/placeholder.gif') no-repeat center center #ccd;
+  border:1px solid #bbb;
+  height:40px;
+  position:relative;
+  z-index:9997;
+}
+
+.stack-item {
+  position:relative;
+  display:block;
+  -webkit-transform:translate3d(0,0,0);
+
+  > a {
+    display:block;
+    text-decoration:none;
+    height:100%;
+    color:#fff;
+    white-space:nowrap;
+
+    &:hover, &:focus {
+      text-decoration:none;
+    }
+
+    &:visited, &:hover, &:active {
+      color:#fff;
+    }
+  }
+}
+
+.stack-item-empty {
+  padding:10px 10px 15px 5px;
+}
+
+.spine-text {
+  position:absolute;
+  z-index:2;
+  overflow:hidden;
+  display:block;
+  padding:2px 0;
+  // white-space:nowrap;
+  // text-overflow:ellipsis;
+}
+
+.spine-title {
+  float:left;
+  font-size:13px;
+  line-height:13px;
+  vertical-align:middle;
+}
+
+.spine-author {
+  float:right;
+  font-size:10px;
+  line-height:13px;
+  vertical-align:middle;
+  margin-right:6px;
+}
+
+.spine-year {
+  position:absolute;
+  z-index:3;
+  top:50%;
+  right:3px;
+  width:28px;
+  height:18px;
+  line-height:18px;
+  background:#f9fceb;
+  font-size:9px;
+  font-weight:bold;
+  font-family:monospace;
+  text-align:center;
+  margin-top:-9px;
+  text-shadow:none;
+  color:#555;
+  border-radius:2px;
+}
+
+.stackview .ribbon {
+  position:absolute;
+  z-index:3;
+  left:55px;
+  right:10px;
+  top:52px;
+  padding:8px 10px 8px 12px;
+  min-height:25px;
+  font-size:20px;
+  line-height:1.25;
+  background:#ededed;
+  color:#222;
+  box-shadow:1px 1px 1px 0 rgba(0,0,0,.5);
+  @include user-select(none);
+
+  .csstransitions &, .csstransforms & {
+    &:after {
+      content:'';
+      position:absolute;
+      bottom:-7px;
+      left:3px;
+      width:0;
+      height:0;
+      border:7px solid transparent;
+      border-bottom-color:shade(#ededed, 30%);
+      @include rotate(45deg);
+    }
+  }
+}
+
+@import "stackview/heatmap";
+@import "stackview/navigation";
+
+/* Types */
+@import "stackview/book";
+@import "stackview/serial";
+@import "stackview/soundrecording";
+@import "stackview/videofilm";
+@import "stackview/webpage";
+
+@import "stackview/ministack";

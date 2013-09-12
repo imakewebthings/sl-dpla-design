@@ -1,22 +1,33 @@
 .book-preview {
+  padding-top:32px;
+
   > h2 {
-    font-size:24px;
+    font-size:18px;
     font-weight:bold;
     margin-bottom:4px;
-    line-height:1;
+    line-height:20px;
+
+    a {
+      color:#4691b9;
+      text-decoration:none;
+
+      &:hover, &:focus {
+        text-decoration:underline;
+      }
+    }
   }
 
   > h3 {
     font-size:16px;
-    font-style:italic;
     margin-bottom:16px;
-    color:$bookPreviewAuthorColor;
+    color:#888;
   }
 
   > img {
     float:right;
-    width:100px;
-    margin:0 0 5px 10px;
+    max-width:100px;
+    height:auto;
+    margin:0 0 5px 15px;
   }
 
   .book-preview-actions {
@@ -29,6 +40,10 @@
       margin-right:5px;
     }
   }
+}
+
+.book-description {
+  margin-top:24px;
 }
 
 .book-meta {

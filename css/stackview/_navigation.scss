@@ -1,0 +1,55 @@
+/**************
+   NAVIGATION
+***************/
+.stack-navigation {
+	position:absolute;
+	left:5px;
+	top:35px;
+	width:41px;
+	text-align:center;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+
+	.upstream, .downstream {
+		height:43px;
+		font-size:0px;
+		cursor:pointer;
+
+		&:before {
+			font-size:24px;
+			font-family:'icomoon';
+			color:#dd4e00;
+		}
+
+		&:hover, &:focus {
+			&:before {
+				color:#222;
+			}
+		}
+	}
+
+	.upstream {
+		&:before {
+			content:'\e00d';
+		}
+	}
+
+	.downstream {
+		&:before {
+			content:'\e007';
+		}
+	}
+
+	.num-found {
+		font-size:15px;
+		line-height:16px;
+		margin:10px 0;
+		color:#818285;
+		display:none;
+	}
+
+	&.empty .num-found {
+		visibility:hidden;
+	}
+}

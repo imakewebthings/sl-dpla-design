@@ -1,23 +1,13 @@
 <% var currentUser = helpers.currentUser(); %>
 
 <div class="book-preview">
-  <% if (model.get('cover_small')) { %>
-    <img src="<%= model.get('cover_small') %>" class="cover_small" alt="">
-  <% } %>
-  <h2><%= model.get('title') %></h2>
+  <img src="http://dp.la/assets/icon-text-b2bb9d2fd006d8e87b24613a4d4f362e.gif" class="cover_small" alt="">
+  <h2><a href="#TODO-ITEMPAGE"><%= model.get('title') %></a></h2>
   <% if (model.get('creator')) { %>
     <h3><%= model.get('creator') %></h3>
   <% } %>
 
-  <ul class="book-preview-actions">
-    <% if (model.get('viewer_url')) { %>
-      <li><a href="<%= model.get('viewer_url') %>" class="button read-book">Read Book</a></li>
-    <% } %>
-  </ul>
-
-  <% if (model.get('description')) { %>
-    <p><%= model.get('description') %></p>
-  <% } %>
+  <p class="book-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
   <div class="book-meta">
     <% if (model.get('publisher')) { %>
@@ -40,7 +30,7 @@
         <%= model.get('measurement_page_numeric') %>
       </p>
     <% } %>
-    
+
     <% if (model.get('source_url')) { %>
       <p class="book-source">
         <strong>Source:</strong>
@@ -52,17 +42,11 @@
     <% } %>
   </div>
 
-  <% if (currentUser && currentUser.get('shelves') && currentUser.get('shelves').length) { %>
-    <form action="#" method="post" class="add-to-shelf-form">
-      <label for="push_shelf_id">Add to Shelf</label>
-      <select name="shelf_id" id="push_shelf_id">
-        <% _.each(currentUser.get('shelves'), function(shelf) { %>
-          <option value="<%= shelf.id %>"><%= shelf.name %></option>
-        <% }); %>
-      </select>
-      <input type="submit" value="Add" class="button">
-    </form>
-  <% } %>
+  <ul class="book-preview-actions">
+    <% if (model.get('viewer_url')) { %>
+      <li><a href="<%= model.get('viewer_url') %>" class="button read-book">Read Book</a></li>
+    <% } %>
+  </ul>
 
   <div class="book-relateds"></div>
 </div>
