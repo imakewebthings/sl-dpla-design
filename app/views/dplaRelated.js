@@ -5,9 +5,7 @@ define([
   'settings',
   'mediator',
   'views/base',
-  'views/dplaDetail',
   'text!templates/dplaRelated.html',
-  'jquery.qtip',
   'jquery.masonry'
 
 ], function(
@@ -17,7 +15,6 @@ define([
   settings,
   mediator,
   BaseView,
-  DplaDetailView,
   DplaRelatedTemplate
 ) {
 
@@ -37,7 +34,6 @@ define([
 
     render: function() {
       BaseView.prototype.render.call(this);
-      this.$('.qtip-me').qtip();
       this.$('.dpla-related').imagesLoaded(_.bind(function() {
         this.$('.dpla-related').masonry({
           itemSelector: '.dpla-related-item'

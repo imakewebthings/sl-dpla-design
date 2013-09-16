@@ -5,9 +5,8 @@ define([
   'views/base',
   'views/stack',
   'views/bookPreview',
-  'views/dplaPreview',
   'text!templates/stackedMain.html',
-  
+
 ], function(
   _,
   settings,
@@ -15,7 +14,6 @@ define([
   BaseView,
   StackView,
   BookPreviewView,
-  DplaPreviewView,
   StackedMainTemplate
 ) {
 
@@ -25,8 +23,7 @@ define([
 
     events: {
       'click .stack-item-link': 'pivot',
-      'click .stack-book .stack-item-link': 'loadPreview',
-      'click .stack-dpla .stack-item-link': 'loadDplaItem'
+      'click .stack-book .stack-item-link': 'loadPreview'
     },
 
     pivot: function(event) {
@@ -38,20 +35,13 @@ define([
       $target.addClass('stack-pivot');
       event.preventDefault();
     },
-    
+
     loadPreview: function(event) {
       var $target = $(event.target).closest('.stack-item');
       var id = $target.data('stackviewItem')['source_id'];
       mediator.trigger('dpla:unload');
       mediator.trigger('navigate:book', id);
-      
-    },
 
-    loadDplaItem: function(event) {
-      var $target = $(event.target).closest('.stack-item');
-      var item = $target.data('stackviewItem');
-      mediator.trigger('preview:unload');
-      mediator.trigger('dpla:load', item);
     }
   });
 

@@ -4,38 +4,20 @@ define([
   'mediator',
   'settings',
   'models/book',
-  'models/user',
-  'models/shelf',
-  'models/dplaItem',
-  'collections/shelves',
   'views/base',
   'views/index',
-  'views/shelf',
   'views/stackedMain',
-  'views/addFromDpla',
-  'views/appNotify',
-  'text!templates/faq.html',
-  'text!templates/privacy.html',
-  'text!templates/stackview-book.html'
+  'views/appNotify'
 ], function(
   _,
   Backbone,
   mediator,
   settings,
   BookModel,
-  UserModel,
-  ShelfModel,
-  DplaItemModel,
-  ShelfCollection,
   BaseView,
   IndexView,
-  ShelfView,
   StackedMainView,
-  AddFromDplaView,
-  appNotify,
-  FaqTemplate,
-  PrivacyTemplate,
-  SVBookTemplate
+  appNotify
 ) {
   var mainView;
   var inStackedMode = false;
@@ -59,11 +41,7 @@ define([
     routes: {
       '': 'index',
       'search/:type/:term': 'search',
-      'books/:id': 'showBook',
-      'shelves/dpla-add/:id': 'addFromDpla',
-      'shelves/:id': 'showShelf',
-      'faq/': 'showFaq',
-      'privacy/': 'showPrivacy'
+      'books/:id': 'showBook'
     },
 
     index: function() {
@@ -73,7 +51,7 @@ define([
 
     search: function(type, term) {
       var decodedTerm = decodeURIComponent(term);
-      
+
       setMain(StackedMainView);
       mediator.trigger('stack:load', {
         url: settings.get('searchURL'),
@@ -89,73 +67,6 @@ define([
     showBook: function(id) {
       setMain(StackedMainView);
       mediator.trigger('preview:load', id);
-    },
-
-    showShelf: function(id) {
-      var shelf = new ShelfModel({ id: id });
-
-      shelf.fetch({
-        success: function(model, response, options) {
-          var fresh = !inStackedMode;
-          var currentUser = UserModel.currentUser();
-          var shelfOwned = currentUser && 
-                           currentUser.get('id') === model.get('user_id');
-
-          setMain(StackedMainView);
-          mediator.trigger('stack:load', {
-            data: {
-              docs: model.get('items'),
-              num_found: model.get('items').length
-            },
-            ribbon: model.get('name'),
-            fullHeight: true,
-            selectFirstBook: fresh,
-            bookTemplate: SVBookTemplate,
-            sortable: shelfOwned,
-            model: model
-          });
-          mainView.subviews.push(new ShelfView({
-            model: model
-          }));
-        },
-        error: function(model, xhr, options) {
-          appNotify.notify({
-            type: 'error',
-            message: 'Something went wrong trying to load that shelf.'
-          });
-        }
-      });
-    },
-
-    addFromDpla: function(id) {
-      var model = new DplaItemModel({ id: id });
-
-      model.fetch({
-        success: function(model, response, options) {
-          setMain(AddFromDplaView, { model: model });
-        },
-
-        error: function(model, xhr, options) {
-          appNotify.notify({
-            type: 'error',
-            message: 'Something went wrong trying to load this item from the DPLA.'
-          })
-        }
-      });
-    },
-
-    showFaq: function() {
-      setMain(BaseView, {
-        el: '.app-main',
-        template: _.template(FaqTemplate)
-      });
-    },
-
-    showPrivacy: function() {
-      setMain(BaseView, {
-        el: '.app-main',
-        template: _.template(PrivacyTemplate)
-      });
     }
   });
 
@@ -183,24 +94,6 @@ define([
 
     'navigate:book': function(id) {
       appRouter.navigate('books/' + id, { trigger: true });
-    },
-
-    'navigate:shelf': function(id) {
-      appRouter.navigate('shelves/' + id, { trigger: true });
-    }
-  });
-
-  // Navigate away from user-owned views on logout
-  mediator.on('user:logout', function() {
-    if (mainView && mainView.privateToUser) {
-      mediator.trigger('navigate:index');
-    }
-  });
-
-  mediator.on('user:logout user:login', function() {
-    if (inStackedMode) {
-      mediator.trigger('stack:redraw');
-      mediator.trigger('preview:redraw');
     }
   });
 

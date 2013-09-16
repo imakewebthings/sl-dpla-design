@@ -2,7 +2,6 @@ define([
   'underscore',
   'mediator',
   'views/appNav',
-  'views/login',
   'views/signup',
   'views/userSettings',
   'models/user',
@@ -13,7 +12,6 @@ define([
   _,
   mediator,
   AppNavView,
-  LoginView,
   SignupView,
   UserSettingsView,
   UserModel,
@@ -36,13 +34,6 @@ define([
 
       it('renders the logged-out template', function() {
         expect(nav.$('.app-login')).toExist();
-      });
-
-      it('launches login modal when login link clicked', function() {
-        var spy = jasmine.createSpy('on login modal');
-        mediator.on('modal:show', spy);
-        nav.$('.app-login').click();
-        expect(spy).toHaveBeenCalledWith(LoginView);
       });
 
       it('launches signup modal when signup link clicked', function() {

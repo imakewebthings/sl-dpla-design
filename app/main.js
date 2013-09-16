@@ -7,7 +7,6 @@ require.config({
     'jquery.chosen': 'libs/jquery/jquery.chosen.min',
     'jquery.cookie': 'libs/jquery/jquery.cookie',
     'jquery.infieldlabel': 'libs/jquery/jquery.infieldlabel',
-    'jquery.qtip': 'libs/jquery/jquery.qtip.min',
     'jquery.masonry': 'libs/jquery/jquery.masonry.min',
     modernizr: 'libs/modernizr/modernizr',
     JSON: 'libs/json2/json2',
@@ -46,10 +45,6 @@ require.config({
       deps: ['jquery']
     },
 
-    'jquery.qtip': {
-      deps: ['jquery']
-    },
-
     modernizr: {
       exports: 'Modernizr'
     },
@@ -73,21 +68,14 @@ require([
   'mediator',
   'router',
   'jquery.cookie',
-  'views/appNav',
   'views/appSearch',
   'views/modal',
-  'models/user',
   'modernizr'
 ], function($, mediator) {
   $.cookie.json = true;
 
   $(function() {
-    // Need to load or not load the user before we can init the router
-    var start = function() {
-      Backbone.history.start();
-      mediator.off('user:login user:logout', start);
-    };
-    mediator.on('user:login user:logout', start);
+    Backbone.history.start();
     mediator.trigger('app:init');
   });
 });

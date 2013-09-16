@@ -17,7 +17,7 @@ If the setting is a function that accepts arguments, those arguments can be
 passed as additional arguments to .get:
 
   foo: function(n) { return n+1; }
-  
+
   settings.get('foo', 4); // returns 5
 */
 
@@ -27,21 +27,8 @@ define(['underscore'], function(_) {
     indexSearchTerm: 'Cooking, American',
     indexStackRibbon: 'Recently Most Read',
 
-    bookmarkletURL: function() {
-      return settings.webRoot + '/#shelves/dpla-add/'
-    },
-
     bookURL: function() {
       return settings.apiRoot + '/books';
-    },
-    bookReadingTrackURL: function(bookID) {
-      return [settings.bookURL(), bookID, 'readings'].join('/');
-    },
-    bookReviewsURL: function(bookID) {
-      return [settings.bookURL(), bookID, 'reviews'].join('/');
-    },
-    dplaItemURL: function() {
-      return settings.apiRoot + '/dpla-items';
     },
     dplaSearchURL: function(params) {
       return settings.apiRoot + '/dpla-items?' + $.param(params);
@@ -49,32 +36,8 @@ define(['underscore'], function(_) {
     indexStackURL: function() {
       return settings.apiRoot + '/books/recent-most-read';
     },
-    neighborsURL: function(bookID) {
-      return [settings.bookURL(), bookID, 'neighbors'].join('/');
-    },
-    reviewURL: function() {
-      return settings.apiRoot + '/reviews';
-    },
-    shelfURL: function() {
-      return settings.apiRoot + '/shelves'
-    },
-    shelfPushURL: function(shelfID) {
-      return [settings.shelfURL(), shelfID, 'items'].join('/');
-    },
-    shelfRemoveURL: function(shelfID, bookID) {
-      return [settings.shelfURL(), shelfID, 'items', bookID].join('/');
-    },
     searchURL: function() {
       return settings.apiRoot + '/search';
-    },
-    sessionURL: function() {
-      return settings.apiRoot + '/session';
-    },
-    userShelvesURL: function(userID) {
-      return [settings.userURL(), userID, 'shelves'].join('/');
-    },
-    userURL: function() {
-      return settings.apiRoot + '/users';
     }
   };
 

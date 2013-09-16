@@ -3,12 +3,9 @@ define([
   'mediator',
   'settings',
   'models/book',
-  'models/user',
-  'collections/review',
   'views/base',
   'views/appNotify',
   'views/bookReader',
-  'views/reviews',
   'views/bookRelateds',
   'text!templates/bookPreview.html'
 ], function(
@@ -16,12 +13,9 @@ define([
   mediator,
   settings,
   BookModel,
-  UserModel,
-  ReviewCollection,
   BaseView,
   appNotify,
   BookReaderView,
-  ReviewsView,
   BookRelatedsView,
   BookPreviewTemplate
 ) {
@@ -32,12 +26,7 @@ define([
 
     events: {
       'click .read-book': 'loadBookReader',
-      'click .single-subject-link': 'loadSingleSubject',
-      'submit .add-to-shelf-form': 'addBookToShelf',
-    },
-
-    initialize: function(options) {
-      BaseView.prototype.initialize.call(this, options);
+      'click .single-subject-link': 'loadSingleSubject'
     },
 
     render: function() {
@@ -69,44 +58,6 @@ define([
 
     loadStack: function(options) {
       mediator.trigger('stack:load', options);
-    },
-
-    addBookToShelf: function(event) {
-      var $shelfFormElement = this.$('.add-to-shelf-form [name="shelf_id"]');
-      var shelfID = $shelfFormElement.val();
-      var shelfName = $shelfFormElement.find('option:selected').text();
-      var bookID = this.model.get('source_id');
-      var bookName = this.model.get('title');
-      var userToken = UserModel.currentUser().get('token');
-
-      $.ajax({
-        type: 'post',
-        url: settings.get('shelfPushURL', shelfID),
-        data: {
-          item: {
-            item_id: bookID,
-            item_type: 'book',
-            source: 'book_source'
-          }
-        },
-        headers: {
-          'Authorization': 'Token token=' + userToken
-        },
-        success: function() {
-          appNotify.notify({
-            type: 'success',
-            message: bookName + ' added to ' + shelfName + ' shelf.'
-          });
-        },
-        error: function() {
-          appNotify.notify({
-            type: 'error',
-            message: 'Something went wrong trying to add ' + bookName +
-                     ' to ' + shelfName + ' shelf.'
-          });
-        }
-      });
-      event.preventDefault();
     }
   });
   var currentPreview;
