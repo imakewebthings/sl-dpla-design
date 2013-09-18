@@ -205,153 +205,153 @@ https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functio
    coldest = heat1
 *******************/
 .heat1 {
-  border-left: #81a0b0;
+  border-left: #497e9a;
 }
 .heat1 a {
-  background-color: #a2c8dc;
-  border-color: #a2c8dc;
+  background-color: #5c9ec1;
+  border-color: #5c9ec1;
 }
 .heat1 .stack-pages {
-  background: #d9e9f1;
+  background: #bdd8e6;
 }
 .heat1 .stack-cover {
-  border-color: #81a0b0;
-  background: #d9e9f1;
+  border-color: #497e9a;
+  background: #bdd8e6;
 }
 
 .heat2 {
-  border-left: #7397aa;
+  border-left: #3d7795;
 }
 .heat2 a {
-  background-color: #90bdd5;
-  border-color: #90bdd5;
+  background-color: #4d95bb;
+  border-color: #4d95bb;
 }
 .heat2 .stack-pages {
-  background: #d2e4ee;
+  background: #b7d4e3;
 }
 .heat2 .stack-cover {
-  border-color: #7397aa;
-  background: #d2e4ee;
+  border-color: #3d7795;
+  background: #b7d4e3;
 }
 
 .heat3 {
-  border-left: #648ea4;
+  border-left: #356f8d;
 }
 .heat3 a {
-  background-color: #7db2ce;
-  border-color: #7db2ce;
+  background-color: #438bb1;
+  border-color: #438bb1;
 }
 .heat3 .stack-pages {
-  background: #cbe0eb;
+  background: #b3d0df;
 }
 .heat3 .stack-cover {
-  border-color: #648ea4;
-  background: #cbe0eb;
+  border-color: #356f8d;
+  background: #b3d0df;
 }
 
 .heat4 {
-  border-left: #55859f;
+  border-left: #306581;
 }
 .heat4 a {
-  background-color: #6ba7c7;
-  border-color: #6ba7c7;
+  background-color: #3d7fa2;
+  border-color: #3d7fa2;
 }
 .heat4 .stack-pages {
-  background: #c3dbe8;
+  background: #b1cbd9;
 }
 .heat4 .stack-cover {
-  border-color: #55859f;
-  background: #c3dbe8;
+  border-color: #306581;
+  background: #b1cbd9;
 }
 
 .heat5 {
-  border-left: #467c99;
-}
-.heat5 a {
-  background-color: #589cc0;
-  border-color: #589cc0;
-}
-.heat5 .stack-pages {
-  background: #bcd7e5;
-}
-.heat5 .stack-cover {
-  border-color: #467c99;
-  background: #bcd7e5;
-}
-
-.heat6 {
-  border-left: #387494;
-}
-.heat6 a {
-  background-color: #4691b9;
-  border-color: #4691b9;
-}
-.heat6 .stack-pages {
-  background: #b5d3e3;
-}
-.heat6 .stack-cover {
-  border-color: #387494;
-  background: #b5d3e3;
-}
-
-.heat7 {
-  border-left: #326884;
-}
-.heat7 a {
-  background-color: #3f82a6;
-  border-color: #3f82a6;
-}
-.heat7 .stack-pages {
-  background: #b2cddb;
-}
-.heat7 .stack-cover {
-  border-color: #326884;
-  background: #b2cddb;
-}
-
-.heat8 {
   border-left: #2c5c76;
 }
-.heat8 a {
+.heat5 a {
   background-color: #387494;
   border-color: #387494;
 }
-.heat8 .stack-pages {
+.heat5 .stack-pages {
   background: #afc7d4;
 }
-.heat8 .stack-cover {
+.heat5 .stack-cover {
   border-color: #2c5c76;
   background: #afc7d4;
 }
 
+.heat6 {
+  border-left: #28536a;
+}
+.heat6 a {
+  background-color: #326885;
+  border-color: #326885;
+}
+.heat6 .stack-pages {
+  background: #adc2ce;
+}
+.heat6 .stack-cover {
+  border-color: #28536a;
+  background: #adc2ce;
+}
+
+.heat7 {
+  border-left: #23495e;
+}
+.heat7 a {
+  background-color: #2c5c76;
+  border-color: #2c5c76;
+}
+.heat7 .stack-pages {
+  background: #aabdc8;
+}
+.heat7 .stack-cover {
+  border-color: #23495e;
+  background: #aabdc8;
+}
+
+.heat8 {
+  border-left: #1f4052;
+}
+.heat8 a {
+  background-color: #275167;
+  border-color: #275167;
+}
+.heat8 .stack-pages {
+  background: #a8b9c2;
+}
+.heat8 .stack-cover {
+  border-color: #1f4052;
+  background: #a8b9c2;
+}
+
 .heat9 {
-  border-left: #275067;
+  border-left: #1a3746;
 }
 .heat9 a {
-  background-color: #316581;
-  border-color: #316581;
+  background-color: #214558;
+  border-color: #214558;
 }
 .heat9 .stack-pages {
-  background: #acc1cc;
+  background: #a6b4bc;
 }
 .heat9 .stack-cover {
-  border-color: #275067;
-  background: #acc1cc;
+  border-color: #1a3746;
+  background: #a6b4bc;
 }
 
 .heat10 {
-  border-left: #214558;
+  border-left: #162e3b;
 }
 .heat10 a {
-  background-color: #2a576f;
-  border-color: #2a576f;
+  background-color: #1c3a4a;
+  border-color: #1c3a4a;
 }
 .heat10 .stack-pages {
-  background: #a9bbc5;
+  background: #a4b0b6;
 }
 .heat10 .stack-cover {
-  border-color: #214558;
-  background: #a9bbc5;
+  border-color: #162e3b;
+  background: #a4b0b6;
 }
 
 /**************
