@@ -1002,12 +1002,12 @@ a, .button {
 .stackview .stack-pivot .stack-item-link {
   cursor: default;
   pointer-events: none;
-  background: #e6a425;
-  border-color: #e6a425;
+  background: #dd4e00;
+  border-color: #dd4e00;
   color: #fff;
 }
 .stackview .stack-pivot .stack-pages {
-  background: #f6ddae;
+  background: #ffa777;
 }
 .stackview .stack-items {
   padding-top: 6px;
