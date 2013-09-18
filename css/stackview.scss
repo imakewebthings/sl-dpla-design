@@ -151,34 +151,35 @@
 }
 
 .spine-title {
-  float:left;
   font-size:13px;
   line-height:13px;
-  vertical-align:middle;
 }
 
 .spine-author {
-  float:right;
+  display:block;
   font-size:10px;
   line-height:13px;
   vertical-align:middle;
-  margin-right:6px;
+  margin-top:-5px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
 }
 
 .spine-year {
   position:absolute;
   z-index:3;
   top:50%;
-  right:3px;
-  width:28px;
+  right:-2px;
+  width:34px;
   height:18px;
   line-height:18px;
   background:#f9fceb;
-  font-size:9px;
-  font-weight:bold;
-  font-family:monospace;
+  font-size:12px;
+  letter-spacing:1px;
+  font-family:'source_sans_pro_semiboldRg', monospace;
   text-align:center;
-  margin-top:-9px;
+  margin-top:-8px;
   text-shadow:none;
   color:#555;
   border-radius:2px;

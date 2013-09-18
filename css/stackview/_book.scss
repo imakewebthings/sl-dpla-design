@@ -7,12 +7,14 @@
 	}
 
 	.spine-text {
-		height:40px;
-		line-height:40px;
 		top:50%;
-		margin-top:-7px;
+		margin-top:-14px;
 		left:15px;
-		right:24px;
+		right:26px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		text-align:center;
 	}
 
 	.spine-year {
