@@ -166,6 +166,7 @@ https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/functio
 }
 
 .stackview .ribbon {
+  display: none;
   position: absolute;
   z-index: 3;
   left: 55px;
